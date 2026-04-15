@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>تواصل معنا</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <h2>Zizo & Anas</h2>
+    <di
+    v>
+        <a href="index.html">الرئيسية</a>
+        <a href="services.html">الخدمات</a>
+        <a href="portfolio.html">أعمالنا</a>
+        <a href="contact.html">تواصل</a>
+    </div>
+</nav>
+
+<section>
+<h1>تواصل معنا</h1>
+<p>اختر الخدمة التي تريدها أو راسلنا مباشرة على واتساب</p>
+
+<form onsubmit="sendWhatsApp(event)">
+<select id="service" required>
+    <option value="">اختر الخدمة</option>
+    <option value="تصميم موقع">تصميم موقع</option>
+    <option value="Landing Page">Landing Page</option>
+    <option value="تعديل موقع">تعديل موقع</option>
+</select>
+<input type="text" id="name" placeholder="اسمك" required>
+<textarea id="details" placeholder="تفاصيل المشروع"></textarea>
+<button class="btn">إرسال واتساب</button>
+</form>
+
+<script>
+function sendWhatsApp(e){
+    e.preventDefault();
+    let service = document.getElementById("service").value;
+    let name = document.getElementById("name").value;
+    let details = document.getElementById("details").value;
+    let msg = `الاسم: ${name}%0Aالخدمة: ${service}%0Aالتفاصيل: ${details}`;
+    window.open("https://wa.me/message/LNSM4QDAR5LOM1?text=" + msg);
+}
+</script>
+
+</body>
+</html>

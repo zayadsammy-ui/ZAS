@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>الخدمات</title>
+
+<style>
+
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -2px; /* يخلي الحروف لازقة */
+    
+    background: linear-gradient(45deg, #00f7ff, #0066ff, #9d00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 5px rgba(0,247,255,0.7),
+        0 0 10px rgba(0,102,255,0.7),
+        0 0 20px rgba(157,0,255,0.7);
+    
+    transition: 0.3s;
+}
+
+.logo:hover {
+    text-shadow:
+        0 0 10px #00f7ff,
+        0 0 20px #0066ff,
+        0 0 30px #9d00ff;
+}
+
+
+
+/* خلفية الكانفاس */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(circle, #0f2027, #000);
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #000;
+    
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+
+nav h2 {
+  font-size: 2rem; /* حجم عنوان Zizo & Anas */
+}
+
+nav div a {
+  font-size: 1.25rem; /* حجم الروابط */
+  padding: 0.5rem 1rem; /* مساحة حول كل رابط */
+  display: inline-block;
+}
+
+/* لو عايز أكبر أو أصغر عدل القيم (rem, px,%) */
+
+
+nav{
+  display: flex;
+  align-items: center;   /* توسيط عمودي */
+  justify-content: center; /* توسيط أفقي */
+  gap: 20px;
+}
+
+nav h2{
+  margin: 0;
+}
+
+nav div{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+}
+
+/* الخلفية */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: radial-gradient(circle, #0f2027, #000);
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #000;
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #222;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #000;
+}
+
+
+
+
+
+/* ... كودك كما هو فوق ... */
+
+.card {
+    background: #222;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+
+    /* مهم للتأثيرات */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+/* Hover = 3 تأثيرات: طيران لفوق + Glow + Zoom */
+.card:hover {
+    transform: translateY(-10px) scale(1.05); /* 📈 + 🔥 */
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.25),  /* Glow خفيف */
+        0 0 45px rgba(255, 0, 0, 0.18);      /* Glow أحمر بسيط */
+    filter: brightness(1.08); /* 💡 glow أقوى على اللون */
+}
+
+/*  لو عايز الكروت مايتأثرش على الموبايل */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+        filter: none;
+    }
+}
+</style>
+</style>
+
+</head>
+<body>
+
+<!-- الخلفية -->
+<canvas id="bg"></canvas>
+
+<nav>
+    <h2 class="logo">ZAS</h2>
+    <div>
+        
+        
+        <a href="portfolio.html">أعمالنا</a>
+        <a href="index.html">الرئيسية</a>
+    </div>
+</nav>
+
+<section>
+
+<div class="cards">
+
+<div class="card">
+    <img src="https://nanusoft.com/wp-content/uploads/2025/02/14d.png">
+    <h3>تصميم مواقع</h3>
+    <p>موقع كامل احترافي</p>
+    <p>السعر: 350 جنيه</p>
+    <a href="service-details.html?service=تصميم موقع">
+        <button class="btn">عرض التفاصيل</button>
+    </a>
+</div>
+
+<div class="card">
+    <h3>Landing Page</h3>
+    <p>صفحة بيع منتجات</p>
+    <p>السعر: 300 جنيه</p>
+    <a href="service-details.html?service=Landing Page">
+        <button class="btn">عرض التفاصيل</button>
+    </a>
+</div>
+
+<div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/11778/11778349.png">
+    <h3>تعديل مواقع</h3>
+    <p>تحسين موقعك الحالي</p>
+    <p>السعر: 200 جنيه</p>
+    <a href="service-details.html?service=تعديل موقع">
+        <button class="btn">عرض التفاصيل</button>
+    </a>
+</div>
+
+</div>
+
+<h2>💼 باكج البرمجة</h2>
+
+<div class="cards">
+
+<div class="card">
+    <h3>Basic</h3>
+    <p>تعديلات بسيطة + دعم</p>
+    <p>300 جنيه / شهر</p>
+    <a href="service-details.html?service=Basic Package">
+        <button class="btn">اشترك</button>
+    </a>
+</div>
+
+<div class="card">
+    <h3>Pro 🔥</h3>
+    <p>تطوير + تحديثات مستمرة</p>
+    <p>500 جنيه / شهر</p>
+    <a href="service-details.html?service=Pro Package">
+        <button class="btn">اشترك</button>
+    </a>
+</div>
+
+<div class="card">
+    <h3>Premium</h3>
+    <p>موقع كامل + دعم VIP</p>
+    <p>800 جنيه / شهر</p>
+    <a href="service-details.html?service=Premium Package">
+        <button class="btn">اشترك</button>
+    </a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p> © 2026</p>
+</footer>
+
+<script>
+// الخلفية المتحركة
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for (let i = 0; i < 100; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3
+    });
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "rgba(255,255,255,0.6)";
+    particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x > canvas.width || p.x < 0) p.speedX *= -1;
+        if (p.y > canvas.height || p.y < 0) p.speedY *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i; j < particles.length; j++) {
+            let dx = particles[i].x - particles[j].x;
+            let dy = particles[i].y - particles[j].y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+                ctx.strokeStyle = "rgba(255,255,255,0.08)";
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
